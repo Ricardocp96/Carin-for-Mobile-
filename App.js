@@ -11,9 +11,10 @@ const Stack = createNativeStackNavigator();
 
 const globalScreenOptions = {
 
-  headerStyle:{backgroundColor: "#2C6BED"},
-  headerTitleStyle: {color: "whte"},
-  headerTintColor: "whte",
+  headerStyle:{backgroundColor: "#6F2DBD"},
+  headerTitleStyle: {color: "white"},
+  headerTintColor: "white",
+ 
 }
 export default function App() {
   return (
@@ -30,8 +31,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

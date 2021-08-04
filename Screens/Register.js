@@ -3,6 +3,10 @@ import {StyleSheet, Text, View} from 'react-native';
 import { StatusBar} from 'expo-status-bar';
 import { KeyboardAvoidingView } from "react-native";
 import { Button, Input, Image } from 'react-native-elements';
+import {auth } from "../firebase";
+
+
+
 const RegisterScreen = ({navigation}) => {
 const [uname, setName] = useState('')
 const [email, setEmail] = useState('')
@@ -15,7 +19,19 @@ const [password, setPassword] = useState('')
 //});
 
 //},[navigation])
-const register = () =>{};
+const register = () =>{
+
+auth
+.createUserWithEmailAndPassword(email,password)
+.then(authUser => {
+  authUser.user.update({
+    displayName: uname,
+    photoURL: imageaurl || require('../guy.png'), 
+  })
+
+})
+.catch((error) => alert(error.message));
+};
 return (
 <KeyboardAvoidingView behavior="padding" style={styles.container}>
 <StatusBar style="light" />

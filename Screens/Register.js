@@ -8,11 +8,18 @@ const [uname, setName] = useState('')
 const [email, setEmail] = useState('')
 const [imageaurl, setaiamage] = useState('')
 const [password, setPassword] = useState('')
+
+//userLayoutEffect (() => {
+//navigation.setOptios({
+  //headerBactitle: " Back to Login",
+//});
+
+//},[navigation])
 const register = () =>{};
 return (
-  <KeyboardAvoidingView behavior="padding" style={styles.container}>
-  <StatusBar style="light" />
-  <Text h3 style={{marginBottom: 50}}>Create a Carin account</Text>
+<KeyboardAvoidingView behavior="padding" style={styles.container}>
+<StatusBar style="light" />
+<Text h3 style={{marginBottom: 50}}>Create a Carin account</Text>
 <View style={styles.inputContainer}>
 <Input 
 placeholder="Username"

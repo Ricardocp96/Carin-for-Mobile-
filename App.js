@@ -1,8 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
+
 import 'react-native-gesture-handler';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import LoginScreen from './Screens/login';
+import RegisterScreen from './Screens/Register';
 import { NavigationContainer } from '@react-navigation/native';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -20,7 +21,8 @@ export default function App() {
   return (
     <NavigationContainer> 
       <Stack.Navigator screenOptions={globalScreenOptions}>
-      <Stack.Screen name = "Login" component={LoginScreen} />
+      <Stack.Screen     name = "Login" component={LoginScreen} />
+      <Stack.Screen     name = "Register" component={RegisterScreen} />
       </Stack.Navigator>
     </NavigationContainer> 
 

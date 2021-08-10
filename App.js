@@ -5,17 +5,16 @@ import { StyleSheet, Text, View } from 'react-native';
 import LoginScreen from './Screens/login';
 import RegisterScreen from './Screens/Register';
 import { NavigationContainer } from '@react-navigation/native';
-
+import Homescreen from './Screens/Homescreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
 const globalScreenOptions = {
 
-  headerStyle:{backgroundColor: "#6F2DBD"},
-  headerTitleStyle: {color: "white"},
-  headerTintColor: "white",
- 
+  headerStyle:{backgroundColor: "#2C6BED"}
+  
+
 }
 export default function App() {
   return (
@@ -23,6 +22,7 @@ export default function App() {
       <Stack.Navigator screenOptions={globalScreenOptions}>
       <Stack.Screen     name = "Login" component={LoginScreen} />
       <Stack.Screen     name = "Register" component={RegisterScreen} />
+      <Stack.Screen     name = "Carin"     component={Homescreen}/>
       </Stack.Navigator>
     </NavigationContainer> 
 

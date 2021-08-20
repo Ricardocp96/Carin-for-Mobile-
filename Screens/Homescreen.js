@@ -25,16 +25,16 @@ import { useStreamChatTheme } from '../useStreamChatTheme';
 
 LogBox.ignoreAllLogs(true);
 
-const chatClient = StreamChat.getInstance('q95x9hkbyd6p');
+const chatClient = StreamChat.getInstance('sz9b9fa4xukm');
 const userToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicm9uIn0.eRVjxLvd4aqCEHY_JRa97g6k7WpHEhxL7Z4K4yTot1c';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiam9obiJ9.bmvuL1z0gjwQ_rX4wohriD0HSLns0p4e9cT6lOAE2MQ';
 const user = {
-  id: 'ron',
+  id: 'john',
 };
 
 const filters = {
   example: 'example-apps',
-  members: { $in: ['ron'] },
+  members: { $in: ['john'] },
   type: 'messaging',
 };
 const sort = { last_message_at: -1 };

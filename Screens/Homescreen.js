@@ -24,8 +24,9 @@ import {
 import { useStreamChatTheme } from '../useStreamChatTheme';
 
 LogBox.ignoreAllLogs(true);
-
+// API KEY GENERATED ON THE DEVELOPER SIDE 
 const chatClient = StreamChat.getInstance('sz9b9fa4xukm');
+// DEVELOPER BASED NOT SERVE SIDE BASED TOKENS 
 const userToken =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiam9obiJ9.bmvuL1z0gjwQ_rX4wohriD0HSLns0p4e9cT6lOAE2MQ';
 const user = {

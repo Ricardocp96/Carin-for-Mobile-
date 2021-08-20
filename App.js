@@ -1,4 +1,3 @@
-
 import 'react-native-gesture-handler';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
@@ -12,9 +11,7 @@ import { ThemeProvider } from "react-native-rapi-ui";
 const Stack = createNativeStackNavigator();
 
 const globalScreenOptions = {
-
-  headerStyle:{backgroundColor: "#2C6BED"}
-  
+ 
 
 }
 export default function App() {
@@ -22,20 +19,13 @@ export default function App() {
 
     <NavigationContainer > 
     
+
+    
 <ThemeProvider>
 
 
-
-
-
-
-      
       <Stack.Navigator
- 
- 
- 
- 
- 
+
        screenOptions={globalScreenOptions}>
         
       <Stack.Screen     name = "Login" component={LoginScreen} />

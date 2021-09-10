@@ -8,6 +8,7 @@ import Homescreen from './Screens/Homescreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AddChattScreen from './Screens/AddChattScreen';
 import { ThemeProvider } from "react-native-rapi-ui";
+
 const Stack = createNativeStackNavigator();
 
 const globalScreenOptions = {
@@ -32,6 +33,7 @@ export default function App() {
       <Stack.Screen     name = "Register" component={RegisterScreen} />
       <Stack.Screen     name = "Carin"     component={Homescreen}/>
       <Stack.Screen     name= "AddChat"    component={AddChattScreen} />
+    
    
       </Stack.Navigator>
       </ThemeProvider>

@@ -56,7 +56,7 @@ export default function ({ navigation }) {
             }}
           >
             <Image
-              resizeMode="contain"
+             resizeMode="contain"
               style={{
                 height: 220,
                 width: 220,
@@ -93,6 +93,20 @@ export default function ({ navigation }) {
               keyboardType="email-address"
               onChangeText={(text) => setEmail(text)}
             />
+<Text>Username</Text>
+<TextInput
+              containerStyle={{ marginTop: 15 }}
+              placeholder="Enter your username"
+              value={email}
+              autoCapitalize="none"
+              autoCompleteType="off"
+              autoCorrect={false}
+              keyboardType="email-address"
+              onChangeText={(text) => setEmail(text)}
+            />
+
+
+
 
             <Text style={{ marginTop: 15 }}>Password</Text>
             <TextInput

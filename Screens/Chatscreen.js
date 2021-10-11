@@ -24,14 +24,14 @@ LogBox.ignoreAllLogs(true);
 
 const chatClient = StreamChat.getInstance('q95x9hkbyd6p');
 const userToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicm9uIn0.eRVjxLvd4aqCEHY_JRa97g6k7WpHEhxL7Z4K4yTot1c';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiUmljYXJkbyJ9.o1_8HIM1Lo0OYKB9mvTxDSEaJyvts6XwXH0SjCZ_idA';
 const user = {
-  id: 'ron',
+  id: 'Ricardo',
 };
 
 const filters = {
   example: 'example-apps',
-  members: { $in: ['ron'] },
+  members: { $in: ['Ricardo'] },
   type: 'messaging',
 };
 const sort = { last_message_at: -1 };

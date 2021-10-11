@@ -12,16 +12,17 @@ import { StreamChat } from 'stream-chat';
 
 const Tab = createBottomTabNavigator();
 
-const client = StreamChat.getInstance('q95x9hkbyd6p');
+const client = StreamChat.getInstance('9d6rbk6hu6dj');
+
 const userToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicm9uIn0.eRVjxLvd4aqCEHY_JRa97g6k7WpHEhxL7Z4K4yTot1c';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiUmljYXJkbyJ9.o1_8HIM1Lo0OYKB9mvTxDSEaJyvts6XwXH0SjCZ_idA';
 const user = {
-  id: 'ron',
+  id: 'Ricardo',
 };
 
 const filters = {
   example: 'example-apps',
-  members: { $in: ['ron'] },
+  members: { $in: ['Ricardo'] },
   type: 'messaging',
 };
 const sort = { last_message_at: -1 };
@@ -29,23 +30,40 @@ const options = {
   state: true,
   watch: true,
 };
+// Connect user 
 
+client.connectUser(
 
+  {
+    id: 'Ricardo', 
+    name: 'Jim Lahey', 
+    image: 'https://i.imgur.com/fR9Jz14.png',
+  },
+  userToken
+)
+const channel = client.channel('messaging', 'travel', { 
+  name: 'Awesome channel about traveling',
+  members: ['Ricardo', 'tommaso'],
+  
+}); 
 
-
-
-
-  function createchannel(){
-    const channel = client.channel('messaging', 'travel', { 
-      name: 'Awesome channel about traveling', 
-  }); 
-  // Here, 'travel' will be the channel ID 
-   channel.create();
+ async  function createchannel(){
+   
+ 
+  await channel.create();
    console.log("Channel created");
 }
 
 
+async function send_message(){
+
+  const message = await channel.sendMessage({ 
+    text: '@Josh I told them I was pesca-pescatarian. Which is one who eats solely fish who eat other fish.', 
   
+});
+console.log("Message sent");
+
+}
 
 function DrawScreen() {
   return (
@@ -59,7 +77,15 @@ function DrawScreen() {
   color="#841584"
   accessibilityLabel="Create Channel"
 />
+<Button
+  onPress={() => {
 
+     send_message();
+  }}
+  title="Send Message"
+  color="#841584"
+  accessibilityLabel="Create Message"
+/>
     </SafeAreaView>
   );
 }

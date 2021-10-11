@@ -6,81 +6,24 @@ import {Listitems} from '../Components/Listitems';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ChattScreen from './Chatscreen';
-import Chatscreen from './Chatscreen';
-import {TouchableOpacity, Image,Button} from 'react-native';
-import { StreamChat } from 'stream-chat';
+
+/** This is where you will put your channel component which container MessageList and MessageInput component  */
 
 const Tab = createBottomTabNavigator();
 
-const client = StreamChat.getInstance('q95x9hkbyd6p');
-const userToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicm9uIn0.eRVjxLvd4aqCEHY_JRa97g6k7WpHEhxL7Z4K4yTot1c';
-const user = {
-  id: 'ron',
-};
-
-const filters = {
-  example: 'example-apps',
-  members: { $in: ['ron'] },
-  type: 'messaging',
-};
-const sort = { last_message_at: -1 };
-const options = {
-  state: true,
-  watch: true,
-};
-
-
-
-
-
-
-  function createchannel(){
-    const channel = client.channel('messaging', 'travel', { 
-      name: 'Awesome channel about traveling', 
-  }); 
-  // Here, 'travel' will be the channel ID 
-   channel.create();
-   console.log("Channel created");
-}
-
-
-  
 
 function DrawScreen() {
   return (
-    <SafeAreaView>
-     <Button
-  onPress={() => {
-
-    createchannel();
-  }}
-  title="Create Channel"
-  color="#841584"
-  accessibilityLabel="Create Channel"
-/>
-
-    </SafeAreaView>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home!</Text>
+    </View>
   );
 }
 function SettingsScreen() {
   return (
-    <SafeAreaView>
-      <TouchableOpacity
-      activeOpacity={0.7}
-          
-          style={styles.touchableOpacityStyle}>
-          <Image
-            source={{
-              uri:
-                'https://raw.githubusercontent.com/AboutReact/sampleresource/master/plus_icon.png',
-            }}
-            style={styles.floatingButtonStyle}
-          />
-
-
-      </TouchableOpacity>
-    </SafeAreaView>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Settings!</Text>
+    </View>
   );
 }
 
@@ -122,22 +65,22 @@ export default function App() {
               iconName = focused
                 ? 'ios-home'
                 : 'ios-home-outline';
-            } else if (route.name === 'Community') {
-              iconName = focused ?'ios-planet' : 'ios-planet';
+            } else if (route.name === 'Settings') {
+              iconName = focused ? 'ios-list-box' : 'ios-list';
             }else if (route.name === 'Inbox') {
-              iconName = focused ? 'ios-chatbubbles' : 'ios-chatbubbles';
+              iconName = focused ? 'ios-chatbubbles' : 'ios-chatb';
             }
 
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: 'blue',
+          tabBarActiveTintColor: 'tomato',
           tabBarInactiveTintColor: 'gray',
         })}
       >
         <Tab.Screen name="Home" component={DrawScreen} />
-        <Tab.Screen name="Community" component={SettingsScreen} />
-       <Tab.Screen name="Inbox"   component={Chatscreen}/>
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+       <Tab.Screen name="Inbox"   component={MesagesScreen}/>
       </Tab.Navigator>
       </View>
       
@@ -149,6 +92,14 @@ export default function App() {
 
 
 // (...)
+
+
+
+
+
+
+
+
 
 
 const styles = StyleSheet.create({
@@ -168,26 +119,4 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexShrink: 1,
   },
-  TouchableOpacity:{
-    position: 'absolute',
-    width: 50,
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    right: 70,
-    bottom: 70,
-  },
-
-  floatingButtonStyle: {
-    resizeMode: 'contain',
-    width: 50,
-    height: 50,
-    
-  },
-
-
 });
-
-
-
-

@@ -22,9 +22,9 @@ import { useStreamChatTheme } from '../useStreamChatTheme';
 
 LogBox.ignoreAllLogs(true);
 
-const chatClient = StreamChat.getInstance('q95x9hkbyd6p');
+const chatClient = StreamChat.getInstance('9d6rbk6hu6dj');
 const userToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiUmljYXJkbyJ9.o1_8HIM1Lo0OYKB9mvTxDSEaJyvts6XwXH0SjCZ_idA';
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiUmljYXJkbyJ9.o1_8HIM1Lo0OYKB9mvTxDSEaJyvts6XwXH0SjCZ_idA';
 const user = {
   id: 'Ricardo',
 };
@@ -57,7 +57,7 @@ const ChannelListScreen = ({ navigation }) => {
     <Chat client={chatClient} i18nInstance={streami18n}>
       <View style={{ height: '100%' }}>
         <ChannelList
-          filters={memoizedFilters}
+         // filters={memoizedFilters}
           onSelect={(channel) => {
             setChannel(channel);
             navigation.navigate('Channel');

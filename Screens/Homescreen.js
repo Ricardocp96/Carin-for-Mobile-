@@ -10,12 +10,13 @@ import Chatscreen from './Chatscreen';
 import {TouchableOpacity, Image,Button} from 'react-native';
 import { StreamChat } from 'stream-chat';
 
+
 const Tab = createBottomTabNavigator();
 
-const client = StreamChat.getInstance('9d6rbk6hu6dj');
+const client = StreamChat.getInstance('sz9b9fa4xukm');
 
 const userToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiUmljYXJkbyJ9.o1_8HIM1Lo0OYKB9mvTxDSEaJyvts6XwXH0SjCZ_idA';
+  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmxhdC13YXRlcmZhbGwtMSJ9.M5s1mFqd0yhw6Q4uTy15xkGao4xnv3v0bTjkv-2FMIA';
 const user = {
   id: 'Ricardo',
 };
@@ -54,20 +55,22 @@ const channel = client.channel('messaging', 'travel', {
    console.log("Channel created");
 }
 
-
+const text = 'I’m mowing the air Randy, I’m mowing the air.'; 
 async function send_message(){
 
-  const message = await channel.sendMessage({ 
-    text: '@Josh I told them I was pesca-pescatarian. Which is one who eats solely fish who eat other fish.', 
   
-});
-console.log("Message sent");
+ 
+const response = await channel.sendMessage({ 
+    text, 
+    customField: '123', 
+})
 
 }
 
 function DrawScreen() {
   return (
     <SafeAreaView>
+
      <Button
   onPress={() => {
 

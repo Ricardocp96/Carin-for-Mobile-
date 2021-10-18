@@ -13,10 +13,10 @@ import { StreamChat } from 'stream-chat';
 
 const Tab = createBottomTabNavigator();
 
-const client = StreamChat.getInstance('sz9b9fa4xukm');
+const client = StreamChat.getInstance('');
 
 const userToken =
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmxhdC13YXRlcmZhbGwtMSJ9.M5s1mFqd0yhw6Q4uTy15xkGao4xnv3v0bTjkv-2FMIA';
+  '';
 const user = {
   id: 'Ricardo',
 };

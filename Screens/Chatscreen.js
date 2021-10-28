@@ -22,9 +22,9 @@ import { useStreamChatTheme } from '../useStreamChatTheme';
 
 LogBox.ignoreAllLogs(true);
 
-const chatClient = StreamChat.getInstance('');
+const chatClient = StreamChat.getInstance('9d6rbk6hu6dj');
 const userToken =
-'';
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiUmljYXJkbyJ9.o1_8HIM1Lo0OYKB9mvTxDSEaJyvts6XwXH0SjCZ_idA';
 const user = {
   id: 'Ricardo',
 };

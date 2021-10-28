@@ -9,8 +9,8 @@ import ChattScreen from './Chatscreen';
 import Chatscreen from './Chatscreen';
 import {TouchableOpacity, Image,Button} from 'react-native';
 import { StreamChat } from 'stream-chat';
-
-
+import Activityfeeds from '../Components/Activityfeeds';
+import HomeView from './Homeitems';
 const Tab = createBottomTabNavigator();
 
 const client = StreamChat.getInstance('');
@@ -92,27 +92,8 @@ function DrawScreen() {
     </SafeAreaView>
   );
 }
-function SettingsScreen() {
-  return (
-    <SafeAreaView>
-      <TouchableOpacity
-      activeOpacity={0.7}
-          
-          style={styles.touchableOpacityStyle}>
-          <Image
-            source={{
-              uri:
-                'https://raw.githubusercontent.com/AboutReact/sampleresource/master/plus_icon.png',
-            }}
-            style={styles.floatingButtonStyle}
-          />
 
-
-      </TouchableOpacity>
-    </SafeAreaView>
-  );
-}
-
+// Load Messaging View
 const MesagesScreen = (props) => {
 
   return(
@@ -124,6 +105,8 @@ const MesagesScreen = (props) => {
   );
 }
 
+
+
 function ChannelScreen({navigation, route}) {
   return (
     <SafeAreaView>
@@ -132,9 +115,23 @@ function ChannelScreen({navigation, route}) {
   );
 }
 
-/** Channel list navigation will be placed here   */
+function SettingsScreen() {
+  return (
+    <SafeAreaView>
+     <Activityfeeds/>
+    </SafeAreaView>
+  );
+}
+// View what other people have posted
+function getHomeitems(){
+  return(
+<SafeAreaView>
 
+<HomeView/>
+</SafeAreaView>
 
+  );
+}
 
 
 export default function App() {
@@ -157,14 +154,14 @@ export default function App() {
               iconName = focused ? 'ios-chatbubbles' : 'ios-chatbubbles';
             }
 
-            // You can return any component that you like here!
+           
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: 'blue',
           tabBarInactiveTintColor: 'gray',
         })}
       >
-        <Tab.Screen name="Home" component={DrawScreen} />
+        <Tab.Screen name="Home" component={getHomeitems} />
         <Tab.Screen name="Community" component={SettingsScreen} />
        <Tab.Screen name="Inbox"   component={Chatscreen}/>
       </Tab.Navigator>
@@ -173,11 +170,7 @@ export default function App() {
   
   );
 }
-// You can import Ionicons from @expo/vector-icons/Ionicons if you use Expo or
-// react-native-vector-icons/Ionicons otherwise.
 
-
-// (...)
 
 
 const styles = StyleSheet.create({

@@ -13,40 +13,7 @@ import Activityfeeds from '../Components/Activityfeeds';
 import HomeView from './Homeitems';
 const Tab = createBottomTabNavigator();
 
-const client = StreamChat.getInstance('');
-
-const userToken =
-  '';
-const user = {
-  id: 'Ricardo',
-};
-
-const filters = {
-  example: 'example-apps',
-  members: { $in: ['Ricardo'] },
-  type: 'messaging',
-};
-const sort = { last_message_at: -1 };
-const options = {
-  state: true,
-  watch: true,
-};
-// Connect user 
-
-client.connectUser(
-
-  {
-    id: 'Ricardo', 
-    name: 'Jim Lahey', 
-    image: 'https://i.imgur.com/fR9Jz14.png',
-  },
-  userToken
-)
-const channel = client.channel('messaging', 'travel', { 
-  name: 'Awesome channel about traveling',
-  members: ['Ricardo', 'tommaso'],
-  
-}); 
+ 
 
  async  function createchannel(){
    
@@ -161,7 +128,7 @@ export default function App() {
           tabBarInactiveTintColor: 'gray',
         })}
       >
-        <Tab.Screen name="Home" component={getHomeitems} />
+        <Tab.Screen name="Home" component={DrawScreen} />
         <Tab.Screen name="Community" component={SettingsScreen} />
        <Tab.Screen name="Inbox"   component={Chatscreen}/>
       </Tab.Navigator>
